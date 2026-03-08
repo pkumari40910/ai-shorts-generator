@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>AI YouTube Shorts Generator</title>
+<style>
+body{
+font-family:Arial;
+background:#111;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+input{
+width:80%;
+padding:12px;
+margin:10px;
+border-radius:8px;
+border:none;
+}
+
+button{
+padding:12px 20px;
+background:red;
+color:white;
+border:none;
+border-radius:8px;
+font-size:16px;
+}
+
+#result{
+margin-top:30px;
+background:#222;
+padding:20px;
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>AI YouTube Shorts Generator</h1>
+
+<input id="topic" placeholder="Enter your video topic">
+
+<br>
+
+<button onclick="generate()">Generate Script</button>
+
+<div id="result"></div>
+
+<script>
+
+function generate(){
+
+var topic=document.getElementById("topic").value;
+
+var script="🔥 Hook: You won't believe this about "+topic+"!\n\n"+
+"🎬 Script: Today we are talking about "+topic+". "+
+"This secret can change everything.\n\n"+
+"📢 Ending: Follow for more amazing facts!";
+
+document.getElementById("result").innerText=script;
+
+}
+
+</script>
+
+</body>
+</html>
