@@ -51,16 +51,18 @@ border-radius:10px;
 
 <script>
 
-function generate(){
+async function generate(){
 
-var topic=document.getElementById("topic").value;
+let topic=document.getElementById("topic").value;
 
-var script="🔥 Hook: You won't believe this about "+topic+"!\n\n"+
-"🎬 Script: Today we are talking about "+topic+". "+
-"This secret can change everything.\n\n"+
-"📢 Ending: Follow for more amazing facts!";
+document.getElementById("result").innerText="Generating...";
 
-document.getElementById("result").innerText=script;
+let response = await fetch("/api/ai?topic="+topic);
+
+let data = await response.json();
+
+document.getElementById("result").innerText =
+data.choices[0].message.content;
 
 }
 
